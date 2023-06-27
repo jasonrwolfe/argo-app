@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: aqua-ke-appset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/jasonrwolfe/argo-app.git
+      revision: HEAD
+      directories:
+      - path: deployments/aqua/*
+  template:
+    metadata:
+      name: '{{`system-{{path.basename}}`}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com:jasonrwolfe/argo-app.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        name: in-cluster
+        namespace: '{{`system-{{path.basename}}`}}'
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+          - ApplyOutOfSyncOnly=true
