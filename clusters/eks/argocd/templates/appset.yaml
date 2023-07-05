@@ -8,7 +8,7 @@ spec:
       repoURL: https://github.com/jasonrwolfe/argo-app.git
       revision: HEAD
       directories:
-      - path: deployments/aqua/*
+      - path: clusters/eks/system/*
   template:
     metadata:
       name: '{{`system-{{path.basename}}`}}'
