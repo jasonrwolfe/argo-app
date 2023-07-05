@@ -15,7 +15,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com:jasonrwolfe/argo-app.git
+        repoURL: https://github.com/jasonrwolfe/argo-app.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
