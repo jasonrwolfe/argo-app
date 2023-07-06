@@ -20,7 +20,7 @@ spec:
         path: '{{path}}'
       destination:
         name: in-cluster
-        namespace: 'system-{{path.basename}}'
+        namespace: '{{`system-{{path.basename}}`}}'
       syncPolicy:
         automated:
           selfHeal: true
