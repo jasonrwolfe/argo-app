@@ -1,7 +1,7 @@
 global:
   platform: eks
   gateway: 
-    address: 20.103.246.155
+    address: 20.103.191.75
     port: 8443
 
 enforcer:
@@ -10,7 +10,7 @@ enforcer:
   global:
     platform: eks
     gateway: 
-      address: 20.103.246.155
+      address: 20.103.191.75
       port: 8443
 
 kube-enforcer:
@@ -20,5 +20,5 @@ kube-enforcer:
   global:
     platform: eks
     gateway: 
-      address: 20.103.246.155
+      address: 20.103.191.75
       port: 8443
