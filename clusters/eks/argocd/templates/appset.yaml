@@ -21,6 +21,11 @@ spec:
       destination:
         name: in-cluster
         namespace: 'system-{{path.basename}}'
+      ignoreDifferences:
+      - group: "admissionregistration.k8s.io"
+        kind: "ValidatingWebhookConfiguration"
+        jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
       syncPolicy:
         automated:
           selfHeal: true
