@@ -33,6 +33,10 @@ spec:
       - group: "core"
         kind: "Secret"
         name: "aqua-kube-enforcer-certs"
+        jsonPointers:
+        - /data/ca.crt
+        - /data/server.crt
+        - /data/server.key
       syncPolicy:
         automated:
           selfHeal: true
