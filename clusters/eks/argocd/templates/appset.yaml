@@ -24,10 +24,12 @@ spec:
       ignoreDifferences:
       - group: "admissionregistration.k8s.io"
         kind: "ValidatingWebhookConfiguration"
+        name: "kube-enforcer-admission-hook-config"
         jqPathExpressions:
         - '.webhooks[]?.clientConfig.caBundle'
       - group: "admissionregistration.k8s.io"
         kind: "MutatingWebhookConfiguration"
+        name: "kube-enforcer-me-injection-hook-config"
         jqPathExpressions:
         - '.webhooks[]?.clientConfig.caBundle'
       - group: "core"
