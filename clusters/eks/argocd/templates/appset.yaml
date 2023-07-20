@@ -32,13 +32,11 @@ spec:
         name: "kube-enforcer-me-injection-hook-config"
         jqPathExpressions:
         - '.webhooks[]?.clientConfig.caBundle'
-      - group: "core"
+      - group: ""
         kind: "Secret"
         name: "aqua-kube-enforcer-certs"
         jsonPointers:
-        - /data/ca.crt
-        - /data/server.crt
-        - /data/server.key
+          - /data
       syncPolicy:
         automated:
           selfHeal: true
